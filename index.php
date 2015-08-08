@@ -19,6 +19,10 @@ curl_close($curl);
  
 $regex = '/<meta itemprop="price" content="([^"]*)"/';
 preg_match($regex, $html, $price);
+$regex = '/<meta itemprop="ratingValue" content="([^"]*)"/';
+preg_match($regex, $html, $rating);
+$regex = '/<meta itemprop="priceCurrency" content="([^"]*)"/';
+preg_match($regex, $html, $currency);
  
 $regex = '/<h1[^>]*>([^<]*)<\/h1>/';
 preg_match($regex, $html, $title);
@@ -28,9 +32,12 @@ preg_match($regex, $html, $image);
  
 if ($price && $title && $image) {
 echo $price[1];
+echo "<br>";
+echo $rating[1];
+echo "<br>";
+echo $currency[1];
 echo "<img src='$image[1]' align='center'></img>";
 echo "<title>$title[1]</title>";
 }
-
 }
 ?>
