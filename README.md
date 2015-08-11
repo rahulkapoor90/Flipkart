@@ -1,7 +1,7 @@
 # Flipkart
 Scraping Flipkart product to display Price and product image.
 
-To Do:
+To Do list:
 
 Add Nice UI.
 Add Web crawler.
