@@ -16,7 +16,8 @@ curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $html = curl_exec($curl);
 curl_close($curl);
- 
+
+//regex method is not correct, use DOM.
 $regex = '/<meta itemprop="price" content="([^"]*)"/';
 preg_match($regex, $html, $price);
 $regex = '/<meta itemprop="ratingValue" content="([^"]*)"/';
